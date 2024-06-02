@@ -1,0 +1,63 @@
+// WeatherCard.scss
+
+.weather-card-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    min-width: 275px;
+  
+    .weather-card {
+      width: 100%;
+      max-width: 400px;
+      background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+      border: none;
+      border-radius: 8px;
+  
+      .card-content {
+        color: white;
+  
+        .location {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: black;
+        }
+  
+        .condition {
+          font-size: 1.25rem;
+          margin-top: 0.5rem;
+        }
+  
+        .details {
+          font-size: 1rem;
+          margin-top: 0.5rem;
+  
+          .detail-item {
+            margin-top: 0.25rem;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .weather-card-container {
+      margin: 1rem auto;
+    }
+  
+    .weather-card {
+      .card-content {
+        .location {
+          font-size: 1.25rem;
+        }
+  
+        .condition {
+          font-size: 1rem;
+        }
+  
+        .details {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+  

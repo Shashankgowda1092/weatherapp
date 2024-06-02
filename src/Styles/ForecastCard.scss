@@ -1,0 +1,62 @@
+// src/components/ForecastCard.scss
+
+.forecast-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem auto;
+  
+    .forecast-card {
+      width: 100%;
+      max-width: 250px;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 8px;
+      background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out;
+  
+      &:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+  
+      .card-content {
+        padding: 1.5rem;
+        color: white;
+  
+        .date {
+          font-size: 1.25rem;
+          font-weight: bold;
+          margin-bottom: 0.75rem;
+        }
+  
+        .detail-item {
+          font-size: 1rem;
+          margin-top: 0.5rem;
+        }
+      }
+
+      .location{
+        color: black;
+      }
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .forecast-card-container {
+      margin: 1rem auto;
+    }
+  
+    .forecast-card {
+      .card-content {
+        .date {
+          font-size: 1rem;
+        }
+  
+        .detail-item {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+  

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
+import '../Styles/WeatherCard.scss';
 
 const WeatherCard = ({ weather }) => {
   if (!weather) {
@@ -8,26 +9,23 @@ const WeatherCard = ({ weather }) => {
   }
 
   return (
-    <Box sx={{ minWidth: 275, margin: 'auto', mt: 2 }}>
-      <Card variant="outlined" color="transparent" sx={{ minWidth: 275 }}>
-        <CardContent>
-          <Typography variant="h5" component="div">
+    <Box className="weather-card-container">
+      <Card variant="outlined" className="weather-card">
+        <CardContent className="card-content">
+        <Typography className="location" variant="h5" component="div">
+            Today's Weather
+          </Typography>
+          <Typography className="location" variant="h5" component="div">
             {weather.location.name}, {weather.location.country}
           </Typography>
-          <Typography variant="h6" component="div">
+          <Typography className="condition" variant="h6" component="div">
             {weather.current.condition.text}
           </Typography>
-          <Typography variant="body2">
-            Temperature: {weather.current.temp_c}°C
-          </Typography>
-          <Typography variant="body2">
-            Humidity: {weather.current.humidity}%
-          </Typography>
-          <Typography variant="body2">
-            Wind: {weather.current.wind_kph} kph
-          </Typography>
-          <Typography variant="body2">
-            Rain: {weather.current.precip_mm} mm
+          <Typography className="details" variant="body2">
+            <div className="detail-item">Temperature: {weather.current.temp_c}°C</div>
+            <div className="detail-item">Humidity: {weather.current.humidity}%</div>
+            <div className="detail-item">Wind: {weather.current.wind_kph} kph</div>
+            <div className="detail-item">Rain: {weather.current.precip_mm} mm</div>
           </Typography>
         </CardContent>
       </Card>

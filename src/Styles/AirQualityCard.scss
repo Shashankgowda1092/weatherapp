@@ -1,0 +1,58 @@
+// src/components/AirQualityCard.scss
+
+.air-quality-card-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    min-width: 275px;
+  
+    .air-quality-card {
+      width: 100%;
+      max-width: 400px;
+      border: none;
+      border-radius: 8px;
+      background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out;
+  
+      &:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+  
+      .card-content {
+        padding: 1.5rem;
+        color: white;
+  
+        .location {
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+          color: black;
+        }
+  
+        .detail-item {
+          font-size: 1rem;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .air-quality-card-container {
+      margin: 1rem auto;
+    }
+  
+    .air-quality-card {
+      .card-content {
+        .location {
+          font-size: 1.25rem;
+        }
+  
+        .detail-item {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+  

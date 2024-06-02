@@ -1,0 +1,123 @@
+.app-container {
+  padding: 1rem;
+  text-align: center;
+
+  .header {
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h5 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 1rem;
+      width: 100%;
+
+      .card {
+        margin: 0.5rem;
+        width: calc(20% - 1rem); /* Five cards per row */
+        max-width: 180px; /* Adjust maximum width of each card */
+      }
+    }
+
+    .forecast-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      .forecast-card {
+        margin: 0.5rem;
+        max-width: 90%; /* Adjust maximum width of forecast card */
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0.5rem;
+
+    .header {
+      h2 {
+        font-size: 2rem;
+      }
+
+      h5 {
+        font-size: 1rem;
+      }
+    }
+
+    .content {
+      .card-container {
+        .card {
+          width: calc(25% - 1rem); /* Four cards per row */
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 0.25rem;
+
+    .header {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h5 {
+        font-size: 0.875rem;
+      }
+    }
+
+    .content {
+      .card-container {
+        .card {
+          width: calc(100% - 1rem); /* One card per row */
+        }
+      }
+    }
+  }
+
+  .forecast-card { /* Additional styling for the forecast card */
+    .forecast-content {
+      font-size: 0.8rem; /* Adjust font size for smaller screens */
+    }
+  }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../src/assets/pexels1.jpg'); /* Path to your default background image */
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+
+.watchlist-card {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}

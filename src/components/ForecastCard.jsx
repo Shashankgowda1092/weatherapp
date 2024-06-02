@@ -1,7 +1,7 @@
-// src/components/ForecastCard.jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, CardContent, Typography, Box } from '@mui/material';
+import '../Styles/ForecastCard.scss';
 
 const ForecastCard = ({ city }) => {
   const [forecast, setForecast] = useState(null);
@@ -14,7 +14,7 @@ const ForecastCard = ({ city }) => {
           params: {
             key: API_KEY,
             q: city,
-            days: 5
+            days: 6
           }
         });
         setForecast(response.data);
@@ -33,23 +33,26 @@ const ForecastCard = ({ city }) => {
   }
 
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', mt: 2 }}>
+    <Box className="forecast-card-container">
       {forecast.forecast.forecastday.map(day => (
-        <Card key={day.date} sx={{ minWidth: 200, margin: 1 }}>
-          <CardContent>
-            <Typography variant="h6" component="div">
+        <Card key={day.date} className="forecast-card">
+          <CardContent className="card-content">
+          <Typography className="location" variant="h5" component="div">
+            6 days Forecast
+          </Typography>
+            <Typography className="date" variant="h6" component="div">
               {day.date}
             </Typography>
-            <Typography variant="body2">
+            <Typography className="detail-item" variant="body2">
               Condition: {day.day.condition.text}
             </Typography>
-            <Typography variant="body2">
+            <Typography className="detail-item" variant="body2">
               Max Temp: {day.day.maxtemp_c}°C
             </Typography>
-            <Typography variant="body2">
+            <Typography className="detail-item" variant="body2">
               Min Temp: {day.day.mintemp_c}°C
             </Typography>
-            <Typography variant="body2">
+            <Typography className="detail-item" variant="body2">
               Rain: {day.day.totalprecip_mm} mm
             </Typography>
           </CardContent>

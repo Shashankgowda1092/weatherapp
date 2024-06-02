@@ -1,0 +1,17 @@
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  padding: 0.5rem;
+
+  .search-input {
+    margin-right: 0.5rem;
+    flex: 1;
+    color: black !important; // Set the text color to black and prioritize this style
+  }
+  
+
+  .search-button {
+    flex-shrink: 0;
+  }
+}
